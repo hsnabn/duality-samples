@@ -3,4 +3,4 @@ This repository contains some sample projects made for the 2D game engine [Duali
 Currently, this repository consists of:
 * SceneTransitions sample
 
-Contributions to the repository are welcome.
+Contributions to this repository are welcome.
