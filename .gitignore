@@ -9,4 +9,5 @@ EditorPlugin
 # Files
 #
 *.csproj.user
+*.sln
 *.suo
