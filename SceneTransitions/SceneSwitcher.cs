@@ -34,5 +34,11 @@ namespace SceneTransitions
             this.GameObj.ParentScene.DisposeLater();
             Scene.SwitchTo(scene);
         }
+
+        // Function to reload the current scene
+        public void Reload()
+        {
+            Scene.Reload();
+        }
     }
 }
