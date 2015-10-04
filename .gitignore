@@ -1,0 +1,12 @@
+# Directories
+#
+.git
+CorePlugin
+EditorPlugin
+**/bin
+**/obj
+
+# Files
+#
+*.csproj.user
+*.suo
