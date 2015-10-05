@@ -10,11 +10,11 @@ namespace SceneTransitions
 {
     /// <summary>
     /// This static class provides functions related to scenes, such as switching,
-    /// dispos then switch, and scene reloading.
+    /// dispose then switch, and scene reloading.
     /// </summary>
     public static class SceneSwitcher
     {
-        // We are  going to use ContentRefs instead of using Scene directly
+        // We are going to use ContentRefs instead of using Scene Resources directly
 
         /// <summary>
         /// Function to switch to another scene.
