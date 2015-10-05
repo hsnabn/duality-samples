@@ -8,14 +8,19 @@ using Duality.Resources;
 
 namespace SceneTransitions
 {
-    // This is a component to attach to a GameObject in a scene.
-    // It will allow switching to other scenes.
-    public class SceneSwitcher : Component
+    /// <summary>
+    /// This static class provides functions related to scenes, such as switching,
+    /// dispos then switch, and scene reloading.
+    /// </summary>
+    public static class SceneSwitcher
     {
-        // We are  going to use ContentRef<Scene> instead of using Scene directly
+        // We are  going to use ContentRefs instead of using Scene directly
 
-        // Function to switch to another scene.
-        public void Switch(ContentRef<Scene> scene)
+        /// <summary>
+        /// Function to switch to another scene.
+        /// </summary>
+        /// <param name="scene">The ContentRef of the scene to switch to.</param>
+        public static void Switch(ContentRef<Scene> scene)
         {
             // Note that we are not doing any scene disposal here. This means that
             // the current scene will not be removed from memory, and that it will
@@ -23,20 +28,27 @@ namespace SceneTransitions
             Scene.SwitchTo(scene);
         }
 
-        // Function to switch to another scene after disposing this scene.
-        public void DisposeAndSwitch(ContentRef<Scene> scene)
+        /// <summary>
+        /// Function to switch to another scene after disposing the specified scene.
+        /// </summary>
+        /// <param name="nextScene">The ContentRef of the scene to dispose.</param>
+        /// <param name="nextScene">The ContentRef of the scene to switch to.</param>
+        public static void DisposeAndSwitch(ContentRef<Scene> disposeScene, 
+                                            ContentRef<Scene> nextScene)
         {
             // In this function, the current scene will be disposed, or removed
             // from memory before the switch to the next scene commences.
 
             // We are using DisposeLater() for safety, it will only dispose the
             // scene after the current update cycle is over.
-            this.GameObj.ParentScene.DisposeLater();
-            Scene.SwitchTo(scene);
+            disposeScene.Res.DisposeLater();
+            Scene.SwitchTo(nextScene);
         }
 
-        // Function to reload the current scene
-        public void Reload()
+        /// <summary>
+        /// Function to reload the current scene.
+        /// </summary>
+        public static void Reload()
         {
             Scene.Reload();
         }

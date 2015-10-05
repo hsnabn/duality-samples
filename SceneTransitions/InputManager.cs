@@ -12,11 +12,16 @@ using Duality.Components.Renderers;
 
 namespace SceneTransitions
 {
-    // This is a component to attach to a GameObject in a scene.
-    // It will receive input and take actions based on the input.
+    /// <summary>
+    /// This is a component to attach to a GameObject in a scene.
+    /// It will receive input and take actions based on the input.
+    /// It also has a property containing a ContentRef of the next scene.
+    /// </summary>
     public class InputManager : Component, ICmpUpdatable
     {
-        // ContentRef to the scene we are going to switch to.
+        /// <summary>
+        /// ContentRef to the scene we are going to switch to.
+        /// </summary>
         public ContentRef<Scene> NextScene { get; set; }
 
         // The ICmpUpdatable interface allows us to perform actions
@@ -24,29 +29,38 @@ namespace SceneTransitions
         // We will check for input here.
         void ICmpUpdatable.OnUpdate()
         {
-            // Here we search the current scene for the SceneSwitcher component.
-            SceneSwitcher switcher = this.GameObj.ParentScene.FindComponent<SceneSwitcher>();
-
-            // If the SceneSwitcher component has been found, and if the ContentRef
-            // to the next scene also exists...
-            if (switcher != null && NextScene != null)
+            // If the ContentRef to the next scene exists...
+            if (NextScene != null)
             {
                 // If the "A" key is pressed, then spawn an object displaying the text "Hi.".
                 if (DualityApp.Keyboard.KeyHit(Key.A)) this.SpawnHi();
 
                 // If the "S" key is pressed, then switch to the next scene.
-                if (DualityApp.Keyboard.KeyHit(Key.S)) switcher.Switch(NextScene);
+                if (DualityApp.Keyboard.KeyHit(Key.S)) SceneSwitcher.Switch(NextScene);
 
                 // If the "D" key is pressed, then dispose this scene, then switch
                 // to the next scene.
-                if (DualityApp.Keyboard.KeyHit(Key.D)) switcher.DisposeAndSwitch(NextScene);
+                if (DualityApp.Keyboard.KeyHit(Key.D))
+                {
+                    // Here we retrieve a ContentRef to the current scene
+                    // (the one to be disposed).
+                    // We are casting the result of the GetContentRef() function to a 
+                    // ContentRef<Scene>, because it does not yield the same type of
+                    // ContentRef as the resource it was called on.
+                    ContentRef<Scene> currentScene = (ContentRef<Scene>)
+                                                     this.GameObj.ParentScene.GetContentRef();
+
+                    SceneSwitcher.DisposeAndSwitch(currentScene, NextScene);
+                }
 
                 // If the "R" key is pressed, then reload the current scene.
-                if (DualityApp.Keyboard.KeyHit(Key.R)) switcher.Reload();
+                if (DualityApp.Keyboard.KeyHit(Key.R)) SceneSwitcher.Reload();
             }
         }
 
-        // A function to create a GameObject that will display the text "Hi.".
+        /// <summary>
+        /// A function to create a GameObject that will display the text "Hi.".
+        /// </summary>
         public void SpawnHi()
         {
             // Initializing the GameObject, and the FormattedText the TextRenderer

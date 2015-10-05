@@ -555,24 +555,18 @@
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">118135706</gameobj>
           </item>
-          <item dataType="Struct" type="SceneTransitions.SceneSwitcher" id="1566725259">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">118135706</gameobj>
-          </item>
         </_items>
-        <_size dataType="Int">2</_size>
-        <_version dataType="Int">2</_version>
+        <_size dataType="Int">1</_size>
+        <_version dataType="Int">3</_version>
       </compList>
       <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="2433271190" surrogate="true">
         <header />
         <body>
           <keys dataType="Array" type="System.Object[]" id="460176462">
             <item dataType="Type" id="4181972688" value="SceneTransitions.InputManager" />
-            <item dataType="Type" id="527371886" value="SceneTransitions.SceneSwitcher" />
           </keys>
           <values dataType="Array" type="System.Object[]" id="3763937866">
             <item dataType="ObjectRef">3623551013</item>
-            <item dataType="ObjectRef">1566725259</item>
           </values>
         </body>
       </compMap>
@@ -584,7 +578,7 @@
         <body />
       </identifier>
       <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
-      <name dataType="String">SceneManager</name>
+      <name dataType="String">InputManager</name>
       <parent />
       <prefabLink />
     </item>
@@ -686,9 +680,9 @@
       <parent />
       <prefabLink />
     </item>
-    <item dataType="ObjectRef">4135448267</item>
-    <item dataType="ObjectRef">524230222</item>
     <item dataType="ObjectRef">4103249463</item>
+    <item dataType="ObjectRef">524230222</item>
+    <item dataType="ObjectRef">4135448267</item>
     <item dataType="ObjectRef">1896968317</item>
   </serializeObj>
   <visibilityStrategy dataType="Struct" type="Duality.Components.DefaultRendererVisibilityStrategy" id="2035693768" />

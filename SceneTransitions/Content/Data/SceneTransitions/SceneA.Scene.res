@@ -229,24 +229,18 @@
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">256901451</gameobj>
           </item>
-          <item dataType="Struct" type="SceneTransitions.SceneSwitcher" id="1705491004">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">256901451</gameobj>
-          </item>
         </_items>
-        <_size dataType="Int">2</_size>
-        <_version dataType="Int">2</_version>
+        <_size dataType="Int">1</_size>
+        <_version dataType="Int">3</_version>
       </compList>
       <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="480266496" surrogate="true">
         <header />
         <body>
           <keys dataType="Array" type="System.Object[]" id="556473747">
             <item dataType="Type" id="3344076006" value="SceneTransitions.InputManager" />
-            <item dataType="Type" id="3209568570" value="SceneTransitions.SceneSwitcher" />
           </keys>
           <values dataType="Array" type="System.Object[]" id="288033528">
             <item dataType="ObjectRef">3762316758</item>
-            <item dataType="ObjectRef">1705491004</item>
           </values>
         </body>
       </compMap>
@@ -258,7 +252,7 @@
         <body />
       </identifier>
       <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
-      <name dataType="String">SceneManager</name>
+      <name dataType="String">InputManager</name>
       <parent />
       <prefabLink />
     </item>
@@ -686,10 +680,10 @@
       <parent />
       <prefabLink />
     </item>
-    <item dataType="ObjectRef">3111643874</item>
-    <item dataType="ObjectRef">2550902941</item>
-    <item dataType="ObjectRef">2733254421</item>
     <item dataType="ObjectRef">3819504792</item>
+    <item dataType="ObjectRef">2733254421</item>
+    <item dataType="ObjectRef">2550902941</item>
+    <item dataType="ObjectRef">3111643874</item>
   </serializeObj>
   <visibilityStrategy dataType="Struct" type="Duality.Components.DefaultRendererVisibilityStrategy" id="2035693768" />
 </root>

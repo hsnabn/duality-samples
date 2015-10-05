@@ -9,5 +9,46 @@
             Defines a Duality core plugin.
             </summary>
         </member>
+        <member name="T:SceneTransitions.InputManager">
+            <summary>
+            This is a component to attach to a GameObject in a scene.
+            It will receive input and take actions based on the input.
+            It also has a property containing a ContentRef of the next scene.
+            </summary>
+        </member>
+        <member name="M:SceneTransitions.InputManager.SpawnHi">
+            <summary>
+            A function to create a GameObject that will display the text "Hi.".
+            </summary>
+        </member>
+        <member name="P:SceneTransitions.InputManager.NextScene">
+            <summary>
+            ContentRef to the scene we are going to switch to.
+            </summary>
+        </member>
+        <member name="T:SceneTransitions.SceneSwitcher">
+            <summary>
+            This static class provides functions related to scenes, such as switching,
+            dispos then switch, and scene reloading.
+            </summary>
+        </member>
+        <member name="M:SceneTransitions.SceneSwitcher.Switch(Duality.ContentRef{Duality.Resources.Scene})">
+            <summary>
+            Function to switch to another scene.
+            </summary>
+            <param name="scene">The ContentRef of the scene to switch to.</param>
+        </member>
+        <member name="M:SceneTransitions.SceneSwitcher.DisposeAndSwitch(Duality.ContentRef{Duality.Resources.Scene},Duality.ContentRef{Duality.Resources.Scene})">
+            <summary>
+            Function to switch to another scene after disposing the specified scene.
+            </summary>
+            <param name="nextScene">The ContentRef of the scene to dispose.</param>
+            <param name="nextScene">The ContentRef of the scene to switch to.</param>
+        </member>
+        <member name="M:SceneTransitions.SceneSwitcher.Reload">
+            <summary>
+            Function to reload the current scene.
+            </summary>
+        </member>
     </members>
 </doc>
