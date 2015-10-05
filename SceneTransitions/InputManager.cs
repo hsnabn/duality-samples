@@ -40,18 +40,11 @@ namespace SceneTransitions
 
                 // If the "D" key is pressed, then dispose this scene, then switch
                 // to the next scene.
-                if (DualityApp.Keyboard.KeyHit(Key.D))
-                {
-                    // Here we retrieve a ContentRef to the current scene
-                    // (the one to be disposed).
-                    // We are casting the result of the GetContentRef() function to a 
-                    // ContentRef<Scene>, because it does not yield the same type of
-                    // ContentRef as the resource it was called on.
-                    ContentRef<Scene> currentScene = (ContentRef<Scene>)
-                                                     this.GameObj.ParentScene.GetContentRef();
-
-                    SceneSwitcher.DisposeAndSwitch(currentScene, NextScene);
-                }
+                // There is no need to cast a Scene resource to a ContentRef, as
+                // every resource has an implicit cast to it's corresponding
+                // ContentRef<T>.
+                if (DualityApp.Keyboard.KeyHit(Key.D)) SceneSwitcher.DisposeAndSwitch
+                                                        (this.GameObj.ParentScene, NextScene);
 
                 // If the "R" key is pressed, then reload the current scene.
                 if (DualityApp.Keyboard.KeyHit(Key.R)) SceneSwitcher.Reload();
