@@ -4,7 +4,7 @@ The samples in this repository use Duality 2.0.
 Contributions to this repository are welcome.
 
 ## Samples
-Each sample will contain a Visual Studio Project file that can be included and built in your Duality ProjectPlugins solution. The Content directory in each sample contains any resources required to use the sample, for example: Scenes, Pixmaps, Sounds et cetera. The contents of the Content directory can be placed in a Duality environment to launch the sample.  
+Each sample will contain a Visual Studio Project file that can be included and built in your Duality ProjectPlugins solution. The Content directory in each sample contains any resources required to use the sample, such as: Scenes, Sprites, Sounds et cetera. The contents of the Content directory can be placed in a Duality environment to launch the sample.  
 
 Currently, this repository consists of:
 * SceneTransitions sample
