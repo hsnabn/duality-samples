@@ -42,7 +42,7 @@ namespace SceneTransitions
                 {
                     // Write an error to the log, and display the message in the scene.
                     Log.Game.WriteWarning("Please run through launcher. Editor does not allow full demonstration of scene switching.");
-                   // this.GameObj.ParentScene.FindGameObject("EditorMessage").GetComponent<TextRenderer>().Active = true;
+                    this.GameObj.ParentScene.FindGameObject("EditorMessage").GetComponent<TextRenderer>().Active = true;
                 }
             }
         }
