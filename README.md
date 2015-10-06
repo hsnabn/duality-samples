@@ -10,4 +10,4 @@ Currently, this repository consists of:
 * SceneTransitions sample
 
   ### SceneTransitions
-  This sample demonstrates part of Duality's scene system. It currently shows the difference between simply switching another scene and disposing the current scene and switching to another scene. It also shows off scene reloading. You can add an object to a random position in the scene, to see the difference between switching and disposing then switching.
+  This sample demonstrates Duality's scene system. It shows the difference between simply switching another scene and disposing the current scene and switching to another scene. It also shows off scene reloading and scene saving. You can add an object to a random position in the scene, to see the difference between switching and disposing then switching.
