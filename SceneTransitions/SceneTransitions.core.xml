@@ -29,7 +29,7 @@
         <member name="T:SceneTransitions.SceneSwitcher">
             <summary>
             This static class provides functions related to scenes, such as switching,
-            dispos then switch, and scene reloading.
+            dispose then switch, and scene reloading.
             </summary>
         </member>
         <member name="M:SceneTransitions.SceneSwitcher.Switch(Duality.ContentRef{Duality.Resources.Scene})">

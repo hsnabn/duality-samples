@@ -15,7 +15,7 @@ namespace SceneTransitions
     public static class SceneSwitcher
     {
         // We are going to use ContentRefs instead of using Scene Resources directly
-
+        
         /// <summary>
         /// Function to switch to another scene.
         /// </summary>
