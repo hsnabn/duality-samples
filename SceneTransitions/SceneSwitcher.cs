@@ -66,7 +66,7 @@ namespace SceneTransitions
             // This result is concatenated with the actual file name.
             // The file name is constructed by concatenating the specified scene's name,
             // along with "_Copy" and the Scene Resource file extension.
-            string filePath = Duality.IO.PathOp.Combine(DualityApp.DataDirectory, @"SceneTransitions\")
+            string filePath = Duality.IO.PathOp.Combine(DualityApp.DataDirectory, "SceneTransitions")
                                 + (scene.Name + "_Copy" + Resource.GetFileExtByType<Scene>());
 
             // Here we save the scene.
