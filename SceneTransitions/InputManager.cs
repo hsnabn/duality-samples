@@ -75,8 +75,7 @@ namespace SceneTransitions
                 // If this scene's name is "SceneC", and if the "C" key is pressed,
                 // then save this scene.
                 if (this.GameObj.ParentScene.Name == "SceneC" 
-                    && DualityApp.Keyboard.KeyHit(Key.C)) SceneSwitcher.SaveSceneCopy
-                                                                        (this.GameObj.ParentScene);
+                    && DualityApp.Keyboard.KeyHit(Key.C)) SceneSwitcher.SaveSceneCopy(this.GameObj.ParentScene);
             }
         }
 
