@@ -4,7 +4,6 @@ using System.Linq;
 
 using Duality;
 using Duality.Components;
-using Duality.Components.Renderers;
 
 namespace TopDownMovement
 {
@@ -17,23 +16,9 @@ namespace TopDownMovement
     [RequiredComponent(typeof(Transform))]
     public class Movable : Component
     {
-        // An enum containing all the possible moving states for
-        // the movable. This is used for the simple Finite State
-        // Machine pattern this component uses.
-        private enum MoveState
-        {
-            MOVE_FORWARD,
-            MOVE_RIGHT,
-            MOVE_LEFT,
-            MOVE_BACKWARD
-        }
 
         // The speed at which this object will move.
-        private float moveSpeed = 5f;
-
-        // Declare/create this component's MoveState.
-        private MoveState moveState = new MoveState();
-
+        private float moveSpeed = 1f;
         /// <summary>
         /// This function is what does all the moving. It's parameters default
         /// to "false" (optional parameters) so we can just set the parameter
@@ -49,65 +34,19 @@ namespace TopDownMovement
             bool left = false, 
             bool backward = false)
         {
-            // We are going to use a switch statement for moving.
-            switch (moveState)
-            {
-                // Move forward case.
-                case MoveState.MOVE_FORWARD:
-                    if (forward) // If the "forward" variable was set to true...
-                    {
-                        // Move this GameObject...
-                        this.GameObj.Transform.MoveBy(-Vector2.UnitY * moveSpeed);
-                        // Change this GameObject's AnimSpriteRenderer's displayed frame
-                        this.SetGraphics(1);
-                    }
-                    goto case MoveState.MOVE_RIGHT;
+            // Here we define a "totalMovement" variable, which is the total distance
+            // that this Movable will be moved.
+            Vector2 totalMovement = Vector2.Zero;
 
-                // Move right case.
-                case MoveState.MOVE_RIGHT:
-                    if (right) // If the "right" variable was set to true...
-                    {
-                        // Move this GameObject...
-                        this.GameObj.Transform.MoveBy(Vector2.UnitX * moveSpeed);
-                        // Change this GameObject's AnimSpriteRenderer's displayed frame
-                        this.SetGraphics(2);
-                    }
-                    goto case MoveState.MOVE_LEFT;
+            // Here we add the respective movement axes multiplied with the movement
+            // speed, based on the parameters passed to this function.
+            if (forward == true) totalMovement += -Vector2.UnitY * this.moveSpeed;
+            if (right == true) totalMovement += Vector2.UnitX * this.moveSpeed;
+            if (left == true) totalMovement += -Vector2.UnitX * this.moveSpeed;
+            if (backward == true) totalMovement += Vector2.UnitY * this.moveSpeed;
 
-                // Move left case.
-                case MoveState.MOVE_LEFT:
-                    if (left) // If the "left" variable was set to true...
-                    {
-                        // Move this GameObject...
-                        this.GameObj.Transform.MoveBy(-Vector2.UnitX * moveSpeed);
-                        // Change this GameObject's AnimSpriteRenderer's displayed frame
-                        this.SetGraphics(3);
-                    }
-                    goto case MoveState.MOVE_BACKWARD;
-
-                // Move backward case.
-                case MoveState.MOVE_BACKWARD:
-                    if (backward) // If the "backward" variable was set to true...
-                    {
-                        // Move this GameObject...
-                        this.GameObj.Transform.MoveBy(Vector2.UnitY * moveSpeed);
-                        // Change this GameObject's AnimSpriteRenderer's displayed frame
-                        this.SetGraphics(4);
-                    }
-                    break;
-            }
-        }
-
-        /// <summary>
-        /// This function sets the first animation frame of the AnimSpriteRenderer
-        /// component of the GameObject this component is attached to.
-        /// </summary>
-        /// <param name="firstFrame">The first frame's frame number.</param>
-        private void SetGraphics(int firstFrame)
-        {
-            // Set this GameObject's AnimSpriteRenderer's AnimFirstFrame (basically,
-            // this is the frame that is displayed) to the supplied value.
-            this.GameObj.GetComponent<AnimSpriteRenderer>().AnimFirstFrame = firstFrame;
+            // If the added movement is not zero, then move!
+            if (totalMovement != Vector2.Zero) this.GameObj.Transform.MoveBy(totalMovement);
         }
     }
 }

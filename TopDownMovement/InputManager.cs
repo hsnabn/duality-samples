@@ -4,6 +4,7 @@ using System.Linq;
 
 using Duality;
 using Duality.Input;
+using Duality.Resources;
 
 namespace TopDownMovement
 {
@@ -39,16 +40,19 @@ namespace TopDownMovement
                 // made all the parameters optional.
 
                 // Move forwards...
-                if (DualityApp.Keyboard.KeyHit(Key.Up)) movable.Move(forward: true);
+                if (DualityApp.Keyboard.KeyPressed(Key.Up)) movable.Move(forward: true);
 
                 // Move to the right...
-                if (DualityApp.Keyboard.KeyHit(Key.Right)) movable.Move(right: true);
+                if (DualityApp.Keyboard.KeyPressed(Key.Right)) movable.Move(right: true);
 
                 // Move to the left...
-                if (DualityApp.Keyboard.KeyHit(Key.Left)) movable.Move(left: true);
+                if (DualityApp.Keyboard.KeyPressed(Key.Left)) movable.Move(left: true);
 
                 // Move backwards...
-                if (DualityApp.Keyboard.KeyHit(Key.Down)) movable.Move(backward: true);
+                if (DualityApp.Keyboard.KeyPressed(Key.Down)) movable.Move(backward: true);
+
+                // Reset the scene if the "R" key is pressed.
+                if (DualityApp.Keyboard.KeyHit(Key.R)) Scene.Reload();
             }
         }
 

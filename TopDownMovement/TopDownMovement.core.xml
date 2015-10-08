@@ -32,12 +32,5 @@
             <param name="left">Whether to move to the left.</param>
             <param name="backward">Whether to move backwards.</param>
         </member>
-        <member name="M:TopDownMovement.Movable.SetGraphics(System.Int32)">
-            <summary>
-            This function sets the first animation frame of the AnimSpriteRenderer
-            component of the GameObject this component is attached to.
-            </summary>
-            <param name="firstFrame">The first frame's frame number.</param>
-        </member>
     </members>
 </doc>
