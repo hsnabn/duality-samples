@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TopDownMovement.core</name>
+    </assembly>
+    <members>
+        <member name="T:TopDownMovement.TopDownMovementCorePlugin">
+            <summary>
+            Defines a Duality core plugin.
+            </summary>
+        </member>
+        <member name="T:TopDownMovement.InputManager">
+            <summary>
+            This component allows us to listen for input in the scene,
+            and act upon the input accordingly.
+            </summary>
+        </member>
+        <member name="T:TopDownMovement.Movable">
+            <summary>
+            This component gives the GameObject it is attached to the ability
+            to move within the scene.
+            </summary>
+        </member>
+        <member name="M:TopDownMovement.Movable.Move(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            This function is what does all the moving. It's parameters default
+            to "false" (optional parameters) so we can just set the parameter
+            we need and the rest will stay the same.
+            </summary>
+            <param name="forward">Whether to move forwards.</param>
+            <param name="right">Whether to move to the right.</param>
+            <param name="left">Whether to move to the left.</param>
+            <param name="backward">Whether to move backwards.</param>
+        </member>
+        <member name="M:TopDownMovement.Movable.SetGraphics(System.Int32)">
+            <summary>
+            This function sets the first animation frame of the AnimSpriteRenderer
+            component of the GameObject this component is attached to.
+            </summary>
+            <param name="firstFrame">The first frame's frame number.</param>
+        </member>
+    </members>
+</doc>

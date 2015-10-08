@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CorePlugin.cs" />
+    <Compile Include="InputManager.cs" />
     <Compile Include="Movable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
