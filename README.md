@@ -12,4 +12,4 @@ Currently, this repository consists of:
   ### SceneTransitions
   This sample demonstrates Duality's scene system. It shows the difference between simply switching another scene and disposing the current scene and then switching to another scene. It also shows off scene reloading and scene saving. You can also add an object to a random position on the screen.
   ### TopDownMovement
-  This sample shows a basic Transform-based top-down movement solution in Duality. It has one scene where you can move a cube around.
+  This sample shows a basic Transform-based top-down movement solution in Duality. It has one scene where you can move a square around.
