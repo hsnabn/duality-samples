@@ -10,6 +10,10 @@ namespace TimedActions
     /// </summary>
     public abstract class TimedAction
     {
+        // Default values for the properties.
+        private static readonly float DEFAULT_TIMELIMIT = 5f;
+        private static readonly int DEFAULT_TRIGGERS  = 1;
+
         // This backing field will store the time limit of this timed action
         // in the form of milliseconds.
         private float timeLimit;
@@ -33,6 +37,13 @@ namespace TimedActions
         /// </summary>
         public bool Completed { get; set; }
 
+        public TimedAction()
+        {
+            // The properties are set to default values when this class is initialized.
+            TimeLimit = DEFAULT_TIMELIMIT;
+            Triggers = DEFAULT_TRIGGERS;
+        }
+
         /// <summary>
         /// This function is where the actual action that will be executed after
         /// the time limit is passed is defined.
@@ -40,6 +51,8 @@ namespace TimedActions
         /// all derived classes must provide their own.
         /// </summary>
         protected abstract void Action();
+
+        // How about a Trigger() function here?
 
         /// <summary>
         /// The function to actually run the timed action until it has been completed.
