@@ -16,9 +16,9 @@ namespace TopDownMovement
     [RequiredComponent(typeof(Transform))]
     public class Movable : Component
     {
-
         // The speed at which this object will move.
         private float moveSpeed = 1f;
+
         /// <summary>
         /// This function is what does all the moving. It's parameters default
         /// to "false" (optional parameters) so we can just set the parameter

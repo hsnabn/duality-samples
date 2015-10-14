@@ -11,7 +11,7 @@ namespace TimedActions
     public abstract class TimedAction
     {
         // Default values for the properties.
-        private static readonly float DEFAULT_TIMELIMIT = 5f;
+        private static readonly float DEFAULT_TIMELIMIT = 1f;
         private static readonly int DEFAULT_TRIGGERS  = 1;
 
         // This backing field will store the time limit of this timed action
