@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gravity.core</name>
+    </assembly>
+    <members>
+        <member name="T:Gravity.GravityCorePlugin">
+            <summary>
+            Defines a Duality core plugin.
+            </summary>
+        </member>
+        <member name="T:Gravity.Gravitator">
+            <summary>
+            This component will gravitate other objects based on it's configuration.
+            </summary>
+        </member>
+        <member name="M:Gravity.Gravitator.GravitateAll">
+            <summary>
+            This function attracts all RigidBodies that are in a list of RigidBodies
+            towards this GameObject. This code is heavily based on a 
+            <a href="http://wiki.unity3d.com/index.php/Gravity">Unity3D Wiki page</a>.
+            </summary>
+        </member>
+        <member name="P:Gravity.Gravitator.Range">
+            <summary>
+            The maximum range at which this object will gravitate other objects.
+            </summary>
+        </member>
+        <member name="P:Gravity.Gravitator.ForceMultiplier">
+            <summary>
+            The amount with which the gravitational force is multiplied with.
+            </summary>
+        </member>
+        <member name="P:Gravity.Gravitator.GravitationType">
+            <summary>
+            The type of gravitation that will be caused by this object.
+            </summary>
+        </member>
+        <member name="T:Gravity.InputManager">
+            <summary>
+            This component receives user input and performs actions based on the input.
+            </summary>
+        </member>
+        <member name="M:Gravity.InputManager.CreateBall(Duality.Vector2)">
+            <summary>
+            This function creates a Ball object using the Ball prefab assigned in this
+            component, and places it at a specified position.
+            </summary>
+            <param name="position">The location the Ball object is to be placed at.</param>
+        </member>
+        <member name="M:Gravity.InputManager.CreateGravitator(Duality.Vector2)">
+            <summary>
+            This function creates a Gravitator object using the Gravitator prefab assigned 
+            in this component, and places it at a specified position.
+            </summary>
+            <param name="position">The location the Gravitator object is to be placed at.</param>
+        </member>
+        <member name="P:Gravity.InputManager.BallPrefab">
+            <summary>
+            The prefab used to create a new Ball object.
+            </summary>
+        </member>
+        <member name="P:Gravity.InputManager.GravitatorPrefab">
+            <summary>
+            The prefab used to create a new Gravitator object.
+            </summary>
+        </member>
+    </members>
+</doc>
