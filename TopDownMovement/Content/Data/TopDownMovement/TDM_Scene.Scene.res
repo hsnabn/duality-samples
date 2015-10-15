@@ -48,6 +48,7 @@
             </velAbs>
           </item>
           <item dataType="Struct" type="TopDownMovement.Movable" id="3880636928">
+            <_x003C_mv_x003E_k__BackingField />
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">832994888</gameobj>
             <moveSpeed dataType="Float">5</moveSpeed>
@@ -110,7 +111,7 @@
         <body />
       </identifier>
       <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
-      <name dataType="String">ArrowSquare</name>
+      <name dataType="String">MovableSquare</name>
       <parent />
       <prefabLink />
     </item>

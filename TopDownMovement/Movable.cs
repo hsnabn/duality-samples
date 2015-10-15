@@ -19,6 +19,8 @@ namespace TopDownMovement
         // The speed at which this object will move.
         private float moveSpeed = 1f;
 
+        public Movable mv { get; set; }
+
         /// <summary>
         /// This function is what does all the moving. It's parameters default
         /// to "false" (optional parameters) so we can just set the parameter
@@ -34,8 +36,8 @@ namespace TopDownMovement
             bool left = false, 
             bool backward = false)
         {
-            // Here we define a "totalMovement" variable, which is the total distance
-            // that this Movable will be moved.
+            // Here we define a "totalMovement" variable, which is the total movement
+            // that will be applied to this Movable.
             Vector2 totalMovement = Vector2.Zero;
 
             // Here we add the respective movement axes multiplied with the movement
