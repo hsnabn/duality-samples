@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>hsnabn.duality-samples.SceneTransitions</id>
+    <version>1.0.0</version>
+	<authors>hsnabn</authors>
+	<owners>hsnabn</owners>
+    <title>Scene Transitions Sample</title>
+	<licenseUrl>https://github.com/hsnabn/duality-samples/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hsnabn/duality-samples</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>A sample project for Duality showing basic scene functionality.</summary>
+    <description>This sample project demonstrates how to switch and reload scenes, the use of disposing a scene, and scene saving.</description>
+	<tags>Duality Sample Plugin Project Top Down Movement</tags>
+    <dependencies>
+      <dependency id="AdamsLair.Duality" version="2.0.0" />
+      <dependency id="AdamsLair.Duality.Editor" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\SceneTransitions\Content\Plugins\SceneTransitions.core.dll" target="lib" />
+    <file src="..\SceneTransitions\Content\Plugins\SceneTransitions.core.xml" target="lib" />
+    <file src="..\SceneTransitions\Content\Data\**\*.res" target="content" />
+    <file src="..\SceneTransitions\**\*.cs" target="source" exclude="..\SceneTransitions\Content\**\*.*;..\SceneTransitions\obj\**\*.*" />
+    <file src="..\SceneTransitions\SceneTransitions.csproj" target="source" />
+  </files>
+</package>

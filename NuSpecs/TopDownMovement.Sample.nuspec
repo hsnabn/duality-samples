@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>hsnabn.duality-samples.TopDownMovement</id>
+    <version>1.0.0</version>
+	<authors>hsnabn</authors>
+	<owners>hsnabn</owners>
+    <title>Top Down Movement Sample</title>
+	<licenseUrl>https://github.com/hsnabn/duality-samples/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hsnabn/duality-samples</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>A sample project for Duality showing how to do simple top down movement.</summary>
+    <description>This sample project shows how to implement simple top down movement functionality in a Duality project.</description>
+	<tags>Duality Sample Plugin Project Top Down Movement</tags>
+    <dependencies>
+      <dependency id="AdamsLair.Duality" version="2.0.0" />
+      <dependency id="AdamsLair.Duality.Editor" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\TopDownMovement\Content\Plugins\TopDownMovement.core.dll" target="lib" />
+    <file src="..\TopDownMovement\Content\Plugins\TopDownMovement.core.xml" target="lib" />
+    <file src="..\TopDownMovement\Content\Data\**\*.res" target="content" />
+    <file src="..\TopDownMovement\**\*.cs" target="source" exclude="..\TopDownMovement\Content\**\*.*;..\TopDownMovement\obj\**\*.*" />
+    <file src="..\TopDownMovement\TopDownMovement.csproj" target="source" />
+  </files>
+</package>

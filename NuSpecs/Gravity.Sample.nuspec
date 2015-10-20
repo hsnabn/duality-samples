@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>hsnabn.duality-samples.Gravity</id>
+    <version>1.0.0</version>
+	<authors>hsnabn</authors>
+	<owners>hsnabn</owners>
+    <title>Gravity Physics Sample</title>
+	<licenseUrl>https://github.com/hsnabn/duality-samples/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hsnabn/duality-samples</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>A small sample project for Duality showing how to make custom gravity physics.</summary>
+    <description>This is a small sample project for the Dualtiy game engine. It shows how to make objects that attract other objects in Duality. It contains one "testbed" scene as well.</description>
+	<tags>Duality Sample Plugin Project Gravity Physics</tags>
+    <dependencies>
+      <dependency id="AdamsLair.Duality" version="2.0.0" />
+      <dependency id="AdamsLair.Duality.Editor" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Gravity\Content\Plugins\Gravity.core.dll" target="lib" />
+    <file src="..\Gravity\Content\Plugins\Gravity.core.xml" target="lib" />
+    <file src="..\Gravity\Content\Data\**\*.res" target="content" />
+    <file src="..\Gravity\**\*.cs" target="source" exclude="..\Gravity\Content\**\*.*;..\Gravity\obj\**\*.*" />
+    <file src="..\Gravity\Gravity.csproj" target="source" />
+  </files>
+</package>
